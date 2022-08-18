@@ -17,6 +17,6 @@ automate() {
 
 	mkdir -p "$1 $(date)/my_system_info" &&
 	touch "$1 $(date)/my_system_info/internet_connection.txt" &&
-	echo "Connection to google:" >> "$1 $(date)/my_system_info/internet_connection.txt" &&
+	echo "Connection to google:" >> "$1 $(date)/my_system_info/internet_connection.txt"
 	PING forcesafesearch.google.com -c 3 >> "$1 $(date)/my_system_info/internet_connection.txt"
 }
