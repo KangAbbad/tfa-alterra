@@ -9,7 +9,7 @@ public class problem8 {
     System.out.println("Output:");
     for (int i = 1; i <= value; i++) {
       for(int j = 1; j <= value; j++){
-        System.out.print(" " + i * j + "\t");
+        System.out.print(i * j + "\t");
       }
       System.out.println("");
     }
