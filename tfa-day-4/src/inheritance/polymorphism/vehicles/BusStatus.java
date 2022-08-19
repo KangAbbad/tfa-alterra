@@ -7,10 +7,14 @@ public enum BusStatus {
   private String description;
 
   BusStatus(String busStatusDescription) {
-    this.description = busStatusDescription;
+    this.setDescription(busStatusDescription);
   }
 
   public String getDescription() {
     return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 }

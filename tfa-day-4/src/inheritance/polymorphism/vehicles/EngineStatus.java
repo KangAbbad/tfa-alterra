@@ -7,10 +7,14 @@ public enum EngineStatus {
   private String description;
 
   EngineStatus(String engineStatusDescription) {
-    this.description = engineStatusDescription;
+    this.setDescription(engineStatusDescription);
   }
 
   public String getDescription() {
     return description;
+  }
+
+  public void setDescription(String description) {
+    this.description = description;
   }
 }

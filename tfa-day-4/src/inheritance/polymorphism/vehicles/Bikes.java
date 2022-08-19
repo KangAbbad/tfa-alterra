@@ -13,7 +13,7 @@ public class Bikes extends Vehicles {
 
   Bikes(String bikesName, EngineStatus bikesEngine, int bikesWheelCount) {
     super(bikesName, bikesEngine);
-    this.wheelCount = bikesWheelCount;
+    this.setWheelCount(bikesWheelCount);
   }
 
   public void identityMySelf() {

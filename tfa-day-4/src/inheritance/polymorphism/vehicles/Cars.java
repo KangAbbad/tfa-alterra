@@ -22,8 +22,8 @@ public class Cars extends Vehicles {
 
   Cars(String carName, EngineStatus carEngine, int carWheelCount, String carEngineType) {
     super(carName, carEngine);
-    this.wheelCount = carWheelCount;
-    this.engineType = carEngineType;
+    this.setWheelCount(carWheelCount);
+    this.setEngineType(carEngineType);
   }
 
   public void identityMySelf() {

@@ -21,8 +21,8 @@ public class Vehicles {
   }
 
   Vehicles(String vehiclesName, EngineStatus vehiclesEngine) {
-    this.name = vehiclesName;
-    this.withEngine = vehiclesEngine;
+    this.setName(vehiclesName);
+    this.setWithEngine(vehiclesEngine);
   }
 
   public void identityMySelf() {
