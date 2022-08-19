@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/tfa-alterra.iml" filepath="$PROJECT_DIR$/tfa-alterra.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tfa-day-3/tfa-day-3.iml" filepath="$PROJECT_DIR$/tfa-day-3/tfa-day-3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tfa-day-4/tfa-day-4.iml" filepath="$PROJECT_DIR$/tfa-day-4/tfa-day-4.iml" />
     </modules>
   </component>
 </project>

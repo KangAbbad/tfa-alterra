@@ -6,12 +6,12 @@ public class Problem4 {
     Scanner input = new Scanner(System.in);
     int value = input.nextInt();
     int primes = 0;
-    for (int i = 2; i <= value; i++){
+    for (int i = 1; i <= value; i++){
       if (value % i == 0){
         primes++;
       }
     }
-    if (primes == 1) {
+    if (primes == 2) {
       System.out.println("Output: Bilangan Prima");
     } else {
       System.out.println("Output: Bukan Bilangan Prima");
