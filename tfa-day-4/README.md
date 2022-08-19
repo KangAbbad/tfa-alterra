@@ -8,7 +8,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-4/src/encaps
 
 ### Task 2 - Data Abstraction
 
-Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-4/src/abstraction.java](https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-4/src/abstraction.java)
+Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-4/src/abstraction](https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-4/src/abstraction)
 
 ### Task 3 - Inheritance & Polymorphism (Vehicles)
 
