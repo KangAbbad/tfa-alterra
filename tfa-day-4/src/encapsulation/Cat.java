@@ -21,11 +21,11 @@ public class Cat {
   }
 
   Cat(String catFurColor, int catNumOfLeg) {
-    this.furColor = catFurColor;
-    this.numOfLeg = catNumOfLeg;
+    this.setFurColor(catFurColor);
+    this.setNumOfLeg(catNumOfLeg);
   }
 
   public void showIdentity() {
-    System.out.println("Saya Kucing dengan detail, Warna bulu: " + furColor + " dengan jumlah kaki : " + numOfLeg);
+    System.out.println("Saya Kucing dengan detail, Warna bulu: " + this.getFurColor() + " dengan jumlah kaki : " + this.getNumOfLeg());
   }
 }

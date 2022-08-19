@@ -30,12 +30,12 @@ public class Flower {
   }
 
   Flower(String flowerName, String flowerColor, int flowerNumOfPetal) {
-    this.name = flowerName;
-    this.color = flowerColor;
-    this.numOfPetal = flowerNumOfPetal;
+    this.setName(flowerName);
+    this.setColor(flowerColor);
+    this.setNumOfPetal(flowerNumOfPetal);
   }
 
   public void showIdentity() {
-    System.out.println("saya Bunga dengan detail, Jenis: " + name + ", color: " + color + ", num of petal: " + numOfPetal);
+    System.out.println("saya Bunga dengan detail, Jenis: " + this.getName() + ", color: " + this.getColor() + ", num of petal: " + this.getNumOfPetal());
   }
 }

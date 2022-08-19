@@ -31,12 +31,12 @@ public class Car {
   }
 
   Car(String carType, String carColor, int carNumOfTire) {
-    this.type = carType;
-    this.color = carColor;
-    this.numOfTire = carNumOfTire;
+    this.setType(carType);
+    this.setColor(carColor);
+    this.setNumOfTire(carNumOfTire);
   }
 
   public void showIdentity() {
-    System.out.println("saya mobil dengan detail, Type: " + type + ", color: " + color + ", num of tire: " + numOfTire);
+    System.out.println("saya Mobil dengan detail, Type: " + this.getType() + ", color: " + this.getColor() + ", num of tire: " + this.getNumOfTire());
   }
 }

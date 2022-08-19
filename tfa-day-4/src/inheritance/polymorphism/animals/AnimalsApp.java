@@ -1,5 +1,10 @@
 package inheritance.polymorphism.animals;
 
+import java.awt.*;
+import java.awt.event.InputEvent;
+import java.io.IOException;
+import java.util.Collection;
+
 public class AnimalsApp {
   public static void main(String[] args) {
     Animal animal = new Animal("Binatang");
