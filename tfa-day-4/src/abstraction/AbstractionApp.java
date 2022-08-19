@@ -10,6 +10,7 @@ public class AbstractionApp {
     System.out.print("Masukkan pilihan Anda: ");
     Scanner inputChoice = new Scanner(System.in);
     int choiceValue = inputChoice.nextInt();
+    for (int i = 0; i < 50; ++i) System.out.println();
 
     if (choiceValue == 1) {
       System.out.println();
@@ -22,7 +23,7 @@ public class AbstractionApp {
       Scanner input2 = new Scanner(System.in);
       int value2 = input2.nextInt();
 
-      System.out.println();
+      for (int i = 0; i < 50; ++i) System.out.println();
 
       System.out.println("+++++++++++++++ CALCULATOR +++++++++++++++");
       System.out.println("Please Enter Calculation Operation:");
