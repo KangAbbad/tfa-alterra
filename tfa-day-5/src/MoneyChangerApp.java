@@ -5,10 +5,10 @@ public class MoneyChangerApp {
     System.out.print("Input: ");
     Scanner input = new Scanner(System.in);
     int value = input.nextInt();
-    System.out.println(MoneyChangerApp.generateMoney(value));
+    MoneyChangerApp.generateMoney(value);
   }
 
-  static String generateMoney(int n) {
+  static void generateMoney(int n) {
     List<Integer> moneyUnitList = Arrays.asList(1, 10, 20 ,50, 100, 200, 500, 1000, 2000, 5000, 10000);
     Collections.sort(moneyUnitList);
     Collections.reverse(moneyUnitList);
@@ -38,6 +38,6 @@ public class MoneyChangerApp {
       }
     }
 
-    return "Output: " + selectedUnit;
+    System.out.println("Output: " + selectedUnit);
   }
 }
