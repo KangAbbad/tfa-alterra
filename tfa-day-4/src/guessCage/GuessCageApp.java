@@ -12,6 +12,9 @@ public class GuessCageApp {
     final String ANSI_CYAN = "\u001B[36m";
     final String ANSI_WHITE = "\u001B[37m";
 
-    System.out.println(ANSI_PURPLE + "This text is red!" + ANSI_RESET);
+//    System.out.println(ANSI_PURPLE + "This text is red!" + ANSI_RESET);
+
+
+
   }
 }
