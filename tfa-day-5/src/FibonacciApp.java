@@ -11,9 +11,7 @@ public class FibonacciApp {
   }
 
   static int fibonacciTopDown(int n) {
-    if (n <= 1) {
-      return n;
-    }
+    if (n <= 1) return n;
 
     return fibonacciTopDown(n - 1) + fibonacciTopDown(n - 2);
   }
