@@ -5,7 +5,7 @@ public class Playground {
   public static void main(String[] args) {
     System.out.println(sumOfDigit(12345));
     System.out.println(factorial(5));
-    System.out.println(fibonacciRecursive(10));
+    System.out.println(fibonacciRecursive(9));
   }
 
   static int sumOfDigit(int n) {

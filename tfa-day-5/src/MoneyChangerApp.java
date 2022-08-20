@@ -40,4 +40,8 @@ public class MoneyChangerApp {
 
     System.out.println("Output: " + selectedUnit);
   }
+
+  static void generateMoneyOptimize() {
+
+  }
 }
