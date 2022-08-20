@@ -17,9 +17,7 @@ public class FibonacciApp {
   }
 
   static int fibonacciBottomUp(int n) {
-    if (n <= 1) {
-      return n;
-    }
+    if (n <= 1) return n;
 
     int fibA = 0;
     int fibB = 1;
