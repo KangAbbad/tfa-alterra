@@ -20,4 +20,4 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-4/src/inheri
 
 ### Task 5 - Tebak Kandang
 
-Link: -
+Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-4/src/guessCage](https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-4/src/guessCage)
