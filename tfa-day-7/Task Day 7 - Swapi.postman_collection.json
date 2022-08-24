@@ -1,0 +1,120 @@
+{
+	"info": {
+		"_postman_id": "491a9ed0-f7a4-4e02-a442-5f7b3537783a",
+		"name": "Task Day 7 - Swapi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3702153"
+	},
+	"item": [
+		{
+			"name": "Swapi 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}",
+					"host": [
+						"{{baseUrl}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Swapi 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/people?search=Darth Vader",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"people"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "Darth Vader"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Swapi 3",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/people/4",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"people",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Swapi 4",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/films",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"films"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Swapi 5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/films/3",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"films",
+						"3"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
