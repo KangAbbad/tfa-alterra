@@ -19,29 +19,42 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
     ```pgsql
     psql -d alta_online_shop
 
-    create table user(
+    create table users(
       id serial primary key,
+      status smallint,
+      dob date,
+      gender char,
       name varchar,
-      email varchar
+      created_at timestamp,
+      updated_at timestamp
     );
     ```
 
-3. Membuat table product
+3. Membuat table products
 
     ```pgsql
-    create table product(
+    create table products(
       id serial primary key,
+      product_type_id int,
+      operator_id int,
+      code varchar,
       name varchar,
-      description varchar
+      status smallint,
+      created_at timestamp,
+      updated_at timestamp,
+      constraint fk_product_type_id foreign key(product_type_id) references product_types(id),
+      constraint fk_operator_id foreign key(operator_id) references operators(id)
     );
     ```
 
-4. Membuat table product_type
+4. Membuat table product_types
 
     ```pgsql
     create table product_type(
       id serial primary key,
       name varchar,
+      created_at timestamp,
+      updated_at timestamp
     );
     ```
 
@@ -51,23 +64,36 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
     create table operators(
       id serial primary key,
       name varchar,
+      created_at timestamp,
+      updated_at timestamp
     );
     ```
 
-6. Membuat table payment_method
+6. Membuat table payment_methods
 
     ```pgsql
-    create table payment_method(
+    create table payment_methods(
       id serial primary key,
       name varchar,
+      created_at timestamp,
+      updated_at timestamp
     );
     ```
 
-7. Membuat table transaction
+7. Membuat table transactions
 
     ```pgsql
     create table transaction(
       id serial primary key,
+      user_id int,
+      payment_method_id int,
+      status varchar,
+      total_qty int,
+      total_price numeric,
+      created_at timestamp,
+      updated_at timestamp,
+      constraint fk_user_id foreign key(user_id) references users(id),
+      constraint fk_payment_method_id foreign key(payment_method_id) references payment_methods(id),
     );
     ```
 
@@ -77,21 +103,21 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
     create table kurir(
       id serial primary key,
       name varchar,
-      created_at date,
-      updated_at date,
+      created_at timestamp,
+      updated_at timestamp,
     );
     ```
 
 9. Menambahkan kolom ongkos_dasar ke table kurir
 
     ```pgsql
-    alter table courier add ongkos_dasar int;
+    alter table kurir add ongkos_dasar numeric;
     ```
 
 10. Merubah nama table kurir menjadi shipping
 
     ```pgsql
-    alter table courier rename to shipping;
+    alter table kurir rename to shipping;
     ```
 
 11. Menghapus table shipping yang ternyata tidak dibutuhkan
@@ -103,40 +129,30 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 12. Menambahkan entity baru dengan relation 1-to-1
 
     ```pgsql
-    alter table payment_method add description varchar;
+    create table payment_method_descriptions(
+      id serial primary key,
+      payment_method_id int,
+      description text,
+      constraint fk_payment_method_id foreign key(payment_method_id) references payment_methods(id)
+    );
     ```
 
 13. Menambahkan entity baru dengan relation 1-to-many
 
     ```pgsql
-    alter table user add alamat varchar;
+    create table addresses(
+      id serial primary key,
+      address text,
+      user_id int,
+      constraint fk_user_id foreign key(user_id) references users(id)
+    );
     ```
 
 14. Menambahkan entity baru dengan relation many-to-many
 
     ```pgsql
-    alter table user add user_payment_method_detail integer;
-    alter table user add constraint fk_user_payment_method_detail foreign key(user_payment_method_detail) references payment_method(id);
-    ```
-
-15. Menambakan entity relation ke table transaction
-
-    ```pgsql
-    ## Menambahkan field user id
-    alter table transaction add user_id integer;
-    alter table transaction add constraint fk_user_id foreign key(user_id) references user(id);
-
-    ## Menambahkan field product id
-    alter table transaction add product_id integer;
-    alter table transaction add constraint fk_product_id foreign key(product_id) references product(id);
-
-    ## Menambahkan field payment method id
-    alter table transaction add payment_method_id integer;
-    alter table transaction add constraint fk_payment_method_id foreign key(payment_method_id) references payment_method(id);
-
-    ## Menambahkan field operator id
-    alter table transaction add operator_id integer;
-    alter table transaction add constraint fk_operator_id foreign key(operator_id) references operators(id);
+    alter table users add column user_payment_method_detail int
+    constraint fk_user_payment_method_detail references payment_methods(id);
     ```
 
 ### Task 3: Data Manipulation Language
