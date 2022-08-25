@@ -10,13 +10,13 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 1. Membuat database dengan nama alta_online_shop
 
-    ```SQL
+    ```pgsql
     createdb alta_online_shop
     ```
 
 2. Membuat table user
 
-    ```postgresql
+    ```pgsql
     psql -d alta_online_shop
 
     create table user(
@@ -28,7 +28,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 3. Membuat table product
 
-    ```postgresql
+    ```pgsql
     create table product(
       id serial primary key,
       name varchar,
@@ -38,7 +38,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 4. Membuat table product_type
 
-    ```postgresql
+    ```pgsql
     create table product_type(
       id serial primary key,
       name varchar,
@@ -47,7 +47,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 5. Membuat table operators
 
-    ```postgresql
+    ```pgsql
     create table operators(
       id serial primary key,
       name varchar,
@@ -56,7 +56,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 6. Membuat table payment_method
 
-    ```postgresql
+    ```pgsql
     create table payment_method(
       id serial primary key,
       name varchar,
@@ -65,7 +65,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 7. Membuat table transaction
 
-    ```postgresql
+    ```pgsql
     create table transaction(
       id serial primary key,
     );
@@ -73,7 +73,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 8. Membuat table kurir
 
-    ```postgresql
+    ```pgsql
     create table kurir(
       id serial primary key,
       name varchar,
@@ -84,44 +84,44 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 9. Menambahkan kolom ongkos_dasar ke table kurir
 
-    ```postgresql
+    ```pgsql
     alter table courier add ongkos_dasar int;
     ```
 
 10. Merubah nama table kurir menjadi shipping
 
-    ```postgresql
+    ```pgsql
     alter table courier rename to shipping;
     ```
 
 11. Menghapus table shipping yang ternyata tidak dibutuhkan
 
-    ```postgresql
+    ```pgsql
     drop table shipping;
     ```
 
 12. Menambahkan entity baru dengan relation 1-to-1
 
-    ```postgresql
+    ```pgsql
     alter table payment_method add description varchar;
     ```
 
 13. Menambahkan entity baru dengan relation 1-to-many
 
-    ```postgresql
+    ```pgsql
     alter table user add alamat varchar;
     ```
 
 14. Menambahkan entity baru dengan relation many-to-many
 
-    ```postgresql
+    ```pgsql
     alter table user add user_payment_method_detail integer;
     alter table user add constraint fk_user_payment_method_detail foreign key(user_payment_method_detail) references payment_method(id);
     ```
 
 15. Menambakan entity relation ke table transaction
 
-    ```postgresql
+    ```pgsql
     ## Menambahkan field user id
     alter table transaction add user_id integer;
     alter table transaction add constraint fk_user_id foreign key(user_id) references user(id);
