@@ -143,19 +143,19 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 1. Insert 5 operators pada table operators
 
-    ```js
+    ```pgsql
     insert into operators(name) values ('XL', 'Telkomsel', 'Indosat', 'Smartfren', 'By.U');
     ```
 
 2. Insert 3 product type
 
-    ```js
+    ```pgsql
     insert into product_types(name) values ('Pulsa', 'Kuota', 'Masa Aktif Nomor');
     ```
 
 3. Insert 2 product dengan product type id = 1 dan operator id = 3
 
-    ```js
+    ```pgsql
     insert into products(product_type_id, operator_id, code, name, status) values
     (1, 3, 'PT1-OP3-5000', 'Pulsa 5000', 1),
     (1, 3, 'PT1-OP3-10000', 'Pulsa 10000', 1);
@@ -163,7 +163,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 4. Insert 3 product dengan product_type_id = 2 dan operator id = 1
 
-    ```js
+    ```pgsql
     insert into products(product_type_id, operator_id, code, name, status) values
     (2, 1, 'PT2-OP1-10GB', 'Combo Plus 10GB', 1),
     (2, 1, 'PT2-OP1-20GB', 'Combo Plus 20GB', 1),
@@ -172,7 +172,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 5. Insert 3 product dengan product_type_id = 3 dan operator id = 4
 
-    ```js
+    ```pgsql
     insert into products(product_type_id, operator_id, code, name, status) values
     (3, 4, 'PT3-OP4-7HARI', 'Masa aktif 7 hari', 1),
     (3, 4, 'PT3-OP4-21HARI', 'Masa aktif 21 hari', 1),
@@ -181,13 +181,13 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 6. Insert product description pada setiap product
 
-    ```js
-    // Menambahkan foreign key product_id ke table product_descriptions
-    // Untuk relasi terhadap product
+    ```pgsql
+    # Menambahkan foreign key product_id ke table product_descriptions
+    # Untuk relasi terhadap product
     alter table product_descriptions add product_id int;
     alter table product_descriptions add constraint fk_product_id foreign key(product_id) references products(id) on delete cascade;
 
-    // Kemudian menambahkan description ke setiap product
+    # Kemudian menambahkan description ke setiap product
     insert into product_descriptions(description, product_id) values
     ('Menambah saldo pulsa sebesar 5000', 1),
     ('Menambah saldo pulsa sebesar 10000, 2'),
@@ -201,7 +201,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 7. Insert 3 payment methods
 
-    ```js
+    ```pgsql
     insert into payment_methods(name, status) values
     ('Gopay', 1),
     ('LinkAja', 1),
@@ -210,11 +210,11 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 8. Insert 5 user pada table users
 
-    ```js
-    // Menambahkan column name pada table users untuk nama user
+    ```pgsql
+    # Menambahkan column name pada table users untuk nama user
     alter table users add name varchar;
 
-    // Menambahkan user
+    # Menambahkan user
     insert into users(name, dob, gender, status) values
     ('Naufal', '1989-08-24', 'M', 1),
     ('Abbad', '1990-08-24', 'M', 1),
@@ -226,7 +226,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 9. Insert 3 transaksi di masing-masing user
 
-    ```js
+    ```pgsql
     insert into transactions(user_id, payment_method_id, status, total_qty, total_price, product_id) values
     (1, 1, 1, 1, 5000, 1),
     (1, 2, 1, 1, 10000, 2),
@@ -255,11 +255,11 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 10. Insert 3 product di masing-masing transaksi
 
-    ```js
-    // Menambahkan product_ids ke table transactions untuk mengumpulkan product_id
+    ```pgsql
+    # Menambahkan product_ids ke table transactions untuk mengumpulkan product_id
     alter table transactions add product_ids int[];
 
-    // Menambahkan product ke masing-masing transaksi
+    # Menambahkan product ke masing-masing transaksi
     update transactions set product_ids = array[1,2,3] where id = 1;
     update transactions set product_ids = array[1,2,3] where id = 2;
     update transactions set product_ids = array[1,2,3] where id = 3;
@@ -282,60 +282,60 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 11. Tampilkan nama user/pelanggan dengan gender laki-laki/M
 
-    ```js
+    ```pgsql
     select name from users where gender = 'M';
     ```
 
 12. Tampilkan product dengan id = 3
 
-    ```js
+    ```pgsql
     select * from products where id = 3;
     ```
 
 13. Tampilkan data pelanggan yang created_at dalam range 7 hari kebelakang dan mempunyai nama mengandung kata 'a'
 
-    ```js
+    ```pgsql
     select * from users where name like '%a%' and created_at > current_date - interval '7 days';
     ```
 
 14. Hitung jumlah user/pelanggan dengan status gender perempuan
 
-    ```js
+    ```pgsql
     select count(*) as user_count from users where gender = 'F';
     ```
 
 15. Tampilkan data pelanggan dengan urutan sesuai nama abjad
 
-    ```js
+    ```pgsql
     select * from users order by name ASC;
     ```
 
 16. Tampilkan 5 data pada data product
 
-    ```js
+    ```pgsql
     select * from products limit 5;
     ```
 
 17. Ubah data product id 1 dengan nama 'product dummy'
 
-    ```js
+    ```pgsql
     update products set name = 'product dummy' where id = 1;
     ```
 
 18. Update qty = 3 pada transaction detail dengan product id 1
 
-    ```js
+    ```pgsql
     update transaction_details set qty = 3 where product_id = 1;
     ```
 
 19. Delete data pada tabel product dengan id 1
 
-    ```js
+    ```pgsql
     delete from products where id = 1;
     ```
 
 20. Delete pada tabel product dengan product type id 1
 
-    ```js
+    ```pgsql
     delete from products where product_type_id = 1;
     ```
