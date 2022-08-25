@@ -10,7 +10,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
 1. Membuat database dengan nama alta_online_shop
 
-    ```postgresql
+    ```SQL
     createdb alta_online_shop
     ```
 
