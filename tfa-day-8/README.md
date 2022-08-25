@@ -8,11 +8,14 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-8/messages](
 
 ### Task 2 - Endpoint Description
 
-> GET /v1/messages
->> Endpoint API yang digunakan untuk mendapatkan data dari database
+#### GET /v1/messages
 
-> POST /v1/messages
->> Endpoint API yang digunakan untuk membuat data baru ke database
+Endpoint API yang digunakan untuk mendapatkan data dari database
 
-> DELETE /v1/messages
->> Endpoint API yang digunakan untuk menghapus data yang ada di database
+#### POST /v1/messages
+
+Endpoint API yang digunakan untuk membuat data baru ke database
+
+#### DELETE /v1/messages
+
+Endpoint API yang digunakan untuk menghapus data yang ada di database
