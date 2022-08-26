@@ -50,7 +50,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 4. Membuat table product_types
 
     ```pgsql
-    create table product_type(
+    create table product_types(
       id serial primary key,
       name varchar,
       created_at timestamp,
@@ -163,7 +163,7 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
     insert into operators(name) values ('XL', 'Telkomsel', 'Indosat', 'Smartfren', 'By.U');
     ```
 
-2. Insert 3 product type
+2. Insert 3 product types
 
     ```pgsql
     insert into product_types(name) values ('Pulsa', 'Kuota', 'Masa Aktif Nomor');
@@ -198,12 +198,6 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 6. Insert product description pada setiap product
 
     ```pgsql
-    # Menambahkan foreign key product_id ke table product_descriptions
-    # Untuk relasi terhadap product
-    alter table product_descriptions add product_id int;
-    alter table product_descriptions add constraint fk_product_id foreign key(product_id) references products(id) on delete cascade;
-
-    # Kemudian menambahkan description ke setiap product
     insert into product_descriptions(description, product_id) values
     ('Menambah saldo pulsa sebesar 5000', 1),
     ('Menambah saldo pulsa sebesar 10000, 2'),
@@ -227,73 +221,60 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 8. Insert 5 user pada table users
 
     ```pgsql
-    # Menambahkan column name pada table users untuk nama user
-    alter table users add name varchar;
-
-    # Menambahkan user
     insert into users(name, dob, gender, status) values
     ('Naufal', '1989-08-24', 'M', 1),
     ('Abbad', '1990-08-24', 'M', 1),
     ('Abduh', '1991-08-24', 'M', 1),
     ('Tuasikal', '1992-08-24', 'M', 1),
-    ('Nuzul', '1993-08-24', 'M', 1),
     ('Dia', '1994-08-24', 'F', 1);
     ```
 
 9. Insert 3 transaksi di masing-masing user
 
     ```pgsql
-    insert into transactions(user_id, payment_method_id, status, total_qty, total_price, product_id) values
-    (1, 1, 1, 1, 5000, 1),
-    (1, 2, 1, 1, 10000, 2),
-    (1, 3, 1, 1, 20000, 3),
+    insert into transactions(user_id, payment_method_id, status, total_qty, total_price) values
+    (1, 2, 'PAID', 3, 15000),
+    (1, 2, 'PAID', 3, 30000),
+    (1, 2, 'PAID', 3, 45000),
 
-    (2, 1, 1, 1, 5000, 1),
-    (2, 2, 1, 1, 10000, 2),
-    (2, 3, 1, 1, 20000, 3),
+    (2, 2, 'PAID', 3, 15000),
+    (2, 2, 'PAID', 3, 30000),
+    (2, 2, 'PAID', 3, 45000),
 
-    (3, 1, 1, 1, 5000, 1),
-    (3, 2, 1, 1, 10000, 2),
-    (3, 3, 1, 1, 20000, 3),
+    (3, 2, 'PAID', 3, 15000),
+    (3, 2, 'PAID', 3, 30000),
+    (3, 2, 'PAID', 3, 45000),
 
-    (4, 1, 1, 1, 5000, 1),
-    (4, 2, 1, 1, 10000, 2),
-    (4, 3, 1, 1, 20000, 3),
+    (4, 2, 'PAID', 3, 15000),
+    (4, 2, 'PAID', 3, 30000),
+    (4, 2, 'PAID', 3, 45000),
 
-    (5, 1, 1, 1, 5000, 1),
-    (5, 2, 1, 1, 10000, 2),
-    (5, 3, 1, 1, 20000, 3),
-
-    (6, 1, 1, 1, 5000, 1),
-    (6, 2, 1, 1, 10000, 2),
-    (6, 3, 1, 1, 20000, 3),
+    (5, 2, 'PAID', 3, 15000),
+    (5, 2, 'PAID', 3, 30000),
+    (5, 2, 'PAID', 3, 45000);
     ```
 
 10. Insert 3 product di masing-masing transaksi
 
     ```pgsql
-    # Menambahkan product_ids ke table transactions untuk mengumpulkan product_id
-    alter table transactions add product_ids int[];
-
-    # Menambahkan product ke masing-masing transaksi
-    update transactions set product_ids = array[1,2,3] where id = 1;
-    update transactions set product_ids = array[1,2,3] where id = 2;
-    update transactions set product_ids = array[1,2,3] where id = 3;
-    update transactions set product_ids = array[1,2,3] where id = 4;
-    update transactions set product_ids = array[1,2,3] where id = 5;
-    update transactions set product_ids = array[1,2,3] where id = 6;
-    update transactions set product_ids = array[1,2,3] where id = 7;
-    update transactions set product_ids = array[1,2,3] where id = 8;
-    update transactions set product_ids = array[1,2,3] where id = 9;
-    update transactions set product_ids = array[1,2,3] where id = 10;
-    update transactions set product_ids = array[1,2,3] where id = 11;
-    update transactions set product_ids = array[1,2,3] where id = 12;
-    update transactions set product_ids = array[1,2,3] where id = 13;
-    update transactions set product_ids = array[1,2,3] where id = 14;
-    update transactions set product_ids = array[1,2,3] where id = 15;
-    update transactions set product_ids = array[1,2,3] where id = 16;
-    update transactions set product_ids = array[1,2,3] where id = 17;
-    update transactions set product_ids = array[1,2,3] where id = 18;
+    insert into transaction_details(transaction_id, product_id, status, qty, price) values
+    (1, 1, 'PAID', 3, 5000),
+    (2, 2, 'PAID', 3, 10000),
+    (3, 3, 'PAID', 3, 15000),
+    (4, 1, 'PAID', 3, 5000),
+    (5, 2, 'PAID', 3, 10000),
+    (6, 3, 'PAID', 3, 15000),
+    (7, 1, 'PAID', 3, 5000),
+    (8, 2, 'PAID', 3, 10000),
+    (9, 3, 'PAID', 3, 15000),
+    (10, 1, 'PAID', 3, 5000),
+    (12, 2, 'PAID', 3, 10000),
+    (13, 3, 'PAID', 3, 15000),
+    (14, 1, 'PAID', 3, 5000),
+    (15, 2, 'PAID', 3, 10000),
+    (16, 3, 'PAID', 3, 15000),
+    (17, 1, 'PAID', 3, 5000),
+    (18, 2, 'PAID', 3, 10000);
     ```
 
 11. Tampilkan nama user/pelanggan dengan gender laki-laki/M
@@ -354,4 +335,59 @@ Link: [https://github.com/KangAbbad/tfa-alterra/blob/master/tfa-day-6/digital%20
 
     ```pgsql
     delete from products where product_type_id = 1;
+    ```
+
+### Task 4: Data Control Language
+
+1. Gabungkan data transaksi dari user id 1 dan user id 2
+
+    ```pgsql
+    select * from transactions where user_id in (1, 2);
+    ```
+
+2. Tampilkan jumlah harga transaksi user id 1
+
+    ```pgsql
+    select sum(total_price) as total_price from transactions where user_id = 1;
+    ```
+
+3. Tampilkan total transaksi dengan product type 2
+
+    ```pgsql
+    ```
+
+4. Tampilkan semua field product dan field name tabel product type yang saling berhubungan
+
+    ```pgsql
+    select
+        products.id,
+        product_types.name as product_type_name,
+        products.operator_id,
+        products.code,
+        products.name as product_name,
+        products.status,
+        products.created_at,
+        products.updated_at
+    from products
+        inner join product_types on products.product_type_id = product_types.id;
+    ```
+
+5. Tampilkan semua field table transaction, field name table product, dan field name table user.
+
+    ```pgsql
+    ```
+
+6. Buat function setelah data transaksi dihapus maka transaction detail terhapus juga dengan transaction id yang dimaksud.
+
+    ```pgsql
+    ```
+
+7. Buat function setelah data transaksi detail dihapus maka data total_qty terupdate berdasarkan qty data transaction id yang dihapus.
+
+    ```pgsql
+    ```
+
+8. Tampilkan data products yang tidak pernah ada di tabel transaction_details dengan sub-query.
+
+    ```pgsql
     ```
