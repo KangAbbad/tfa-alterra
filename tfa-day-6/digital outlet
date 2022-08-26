@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-08-26T01:14:49.641Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="Pgrf3eIp_kxsJ99mEPJW" version="20.2.7" type="github">
+<mxfile host="app.diagrams.net" modified="2022-08-26T01:19:40.600Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.102 Safari/537.36" etag="3R5WAMzMb748A9--NYxE" version="20.2.7" type="github">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Page-1">
-    <mxGraphModel dx="1455" dy="877" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1720" dy="1036" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -548,7 +548,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="_nHkBYmLLHoSBLMo4b73-62" value="Transaction Details" style="shape=table;startSize=30;container=1;collapsible=1;childLayout=tableLayout;fixedRows=1;rowLines=0;fontStyle=1;align=center;resizeLast=1;" parent="1" vertex="1">
-          <mxGeometry x="810" y="400" width="240" height="240" as="geometry" />
+          <mxGeometry x="810" y="430" width="240" height="240" as="geometry" />
         </mxCell>
         <mxCell id="_nHkBYmLLHoSBLMo4b73-63" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;top=0;left=0;right=0;bottom=1;" parent="_nHkBYmLLHoSBLMo4b73-62" vertex="1">
           <mxGeometry y="30" width="240" height="30" as="geometry" />
@@ -666,6 +666,12 @@
               <mxPoint x="370" y="505" />
             </Array>
           </mxGeometry>
+        </mxCell>
+        <mxCell id="ygTusgN8i1TGuAtIA-F5-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="_nHkBYmLLHoSBLMo4b73-35" target="_nHkBYmLLHoSBLMo4b73-63">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ygTusgN8i1TGuAtIA-F5-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="C-vyLk0tnHw3VtMMgP7b-3" target="ygTusgN8i1TGuAtIA-F5-1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
