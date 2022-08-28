@@ -18,11 +18,9 @@ import java.util.Date;
 @Setter
 public class OrderResponseDTO implements Serializable {
   private Long id;
-  private User user;
-  @JsonProperty("service_type")
-  private LaundryServiceType serviceType;
-  @JsonProperty("payment_method_id")
-  private PaymentMethod paymentMethod;
+  private UserResponseDTO user;
+  private LaundryServiceTypeResponseDTO serviceType;
+  private PaymentMethodResponseDTO paymentMethod;
   private int weight;
   @JsonProperty("total_price")
   private BigDecimal totalPrice;
