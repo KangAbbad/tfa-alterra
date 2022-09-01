@@ -1,4 +1,4 @@
-package com.alta.bootcamp.chatappremake.controller;
+package com.alta.bootcamp.chatappremake.controllers;
 
 import com.alta.bootcamp.chatappremake.dto.MessageDTO;
 import org.springframework.messaging.handler.annotation.MessageMapping;
