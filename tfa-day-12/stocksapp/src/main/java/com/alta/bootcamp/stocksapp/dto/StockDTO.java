@@ -34,7 +34,7 @@ public class StockDTO implements Serializable {
 
   @Override
   public String toString() {
-    return "StockResponseDTO{" +
+    return "StockDTO{" +
             "eventType='" + eventType + '\'' +
             ", eventTime=" + eventTime +
             ", symbol='" + symbol + '\'' +
