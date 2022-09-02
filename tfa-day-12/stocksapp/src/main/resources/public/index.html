@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <title>Spring Boot WebSocket Stocks Application</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<noscript>
+    <h2>Sorry! Your browser doesn't support Javascript</h2>
+</noscript>
+
+<p class="connecting hidden">Websocket Connecting!</p>
+<p class="disconnected">Websocket Disconnected!</p>
+<p class="connected hidden">Websocket Connected!</p>
+<button class="connect-btn">Connect Websocket</button>
+<button class="disconnect-btn">Disconnect Websocket</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+<script>
+    const connectingElement = document.querySelector('.connecting');
+    const disconnectedElement = document.querySelector('.disconnected');
+    const connectedElement = document.querySelector('.connected');
+    const connectBtn = document.querySelector('.connect-btn');
+    const disconnectBtn = document.querySelector('.disconnect-btn');
+
+    let ws = null;
+
+    function onConnected() {
+        connectingElement.classList.add('hidden');
+        disconnectedElement.classList.add('hidden');
+        connectedElement.classList.remove('hidden');
+
+        // Subscribe to the Message Topic
+        stompClient.subscribe('/topic/messages');
+        stompClient.debug = null
+
+        ws = new WebSocket("wss://stream-cloud.binanceru.net/ws/btcusdt@aggTrade");
+        ws.onmessage = (event) => {
+            stompClient.send("/app/chat", {}, event.data);
+        }
+    }
+
+    function onError() {
+        connectingElement.textContent = 'Could not connect to WebSocket server. Please refresh this page to try again!';
+        connectingElement.style.color = 'red';
+
+        connectingElement.classList.remove('hidden');
+        disconnectedElement.classList.add('hidden');
+        connectedElement.classList.add('hidden');
+    }
+
+    function connect() {
+        connectingElement.classList.remove('hidden');
+        disconnectedElement.classList.add('hidden');
+        connectedElement.classList.add('hidden');
+
+        const socket = new SockJS('/ws');
+        stompClient = Stomp.over(socket);
+        stompClient.connect({}, onConnected, onError);
+    }
+
+    function disconnect() {
+        if (!ws) return;
+        ws.close();
+        disconnectedElement.classList.remove('hidden');
+        connectedElement.classList.add('hidden');
+    }
+
+    connectBtn.addEventListener('click', connect, true);
+    disconnectBtn.addEventListener('click', disconnect, true);
+</script>
+</body>
+</html>
