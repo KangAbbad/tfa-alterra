@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Spring Boot WebSocket Stocks Application</title>
+    <title>Spring Boot WebSocket Application</title>
     <style>
         .hidden {
             display: none;
@@ -17,8 +17,8 @@
 <p class="connecting hidden">Websocket Connecting!</p>
 <p class="disconnected">Websocket Disconnected!</p>
 <p class="connected hidden">Websocket Connected!</p>
-<button class="connect-btn">Connect Websocket</button>
-<button class="disconnect-btn">Disconnect Websocket</button>
+<button class="connect-btn">Connect</button>
+<button class="disconnect-btn">Disconnect</button>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.1.4/sockjs.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
@@ -36,7 +36,6 @@
         disconnectedElement.classList.add('hidden');
         connectedElement.classList.remove('hidden');
 
-        // Subscribe to the Message Topic
         stompClient.subscribe('/topic/messages');
         stompClient.debug = null
 
