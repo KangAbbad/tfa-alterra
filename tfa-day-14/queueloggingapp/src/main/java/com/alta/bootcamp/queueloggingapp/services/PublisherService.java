@@ -1,9 +1,7 @@
 package com.alta.bootcamp.queueloggingapp.services;
 
 import com.alta.bootcamp.queueloggingapp.dto.UserRequestDTO;
-import com.alta.bootcamp.queueloggingapp.exceptions.ValidationErrorException;
 import com.alta.bootcamp.queueloggingapp.utils.ValidateUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

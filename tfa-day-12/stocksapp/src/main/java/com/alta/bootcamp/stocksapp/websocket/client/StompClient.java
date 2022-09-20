@@ -21,6 +21,7 @@ public class StompClient {
     // Listen to binance 2
     // String URL = "wss://stream-cloud.binanceru.net/ws";
     // Listen to localhost
+    // String URL = "ws://localhost:8080/ws";
     String URL = "ws://localhost:8080/ws";
     stompClient.connect(URL, stompListener);
 
