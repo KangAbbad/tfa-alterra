@@ -15,20 +15,24 @@ Jelaskan kenapa line 21, 22, 23 tidak dapat tampil?
 
 ### Task 2.b
 
-    Jelaskan kenapa deklarasi pada baris 26 menyebabkan error?
-    > Karena deklarasi variable 'nama' adalah const. Const berarti tidak bisa di replace dengan data baru
+```notes
+Jelaskan kenapa deklarasi pada baris 26 menyebabkan error?
+> Karena deklarasi variable 'nama' adalah const. Const berarti tidak bisa di replace dengan data baru
+```
 
 ### Task 2.c
 
-    Dengan melakukan komen pada baris ke 26, apakah baris 28 dapat dieksekusi? jelaskan
-    > Baris 28 dapat dieksekusi. Karena dibaris 26 melakukan assign data ke variable const dan ini menyebabkan error, sehingga dengan mengkomen baris 26 maka baris 28 tereksekusi dengan baik
+```notes
+Dengan melakukan komen pada baris ke 26, apakah baris 28 dapat dieksekusi? jelaskan
+> Baris 28 dapat dieksekusi. Karena dibaris 26 melakukan assign data ke variable const dan ini menyebabkan error, sehingga dengan mengkomen baris 26 maka baris 28 tereksekusi dengan baik
+```
 
 ### Task 3
 
-    ```javascript
-      const foo = ["Budi", "Sita", "Ayu"];
-      const [a, b, c] = foo;
-    ```
+```javascript
+  const foo = ["Budi", "Sita", "Ayu"];
+  const [a, b, c] = foo;
+```
 
 ### Task 4
 
