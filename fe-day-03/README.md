@@ -23,28 +23,28 @@
 
 ### Task 3
 
-    ```javascript
-      const foo = ["Budi", "Sita", "Ayu"];
-      const [a, b, c] = foo;
-    ```
+```javascript
+  const foo = ["Budi", "Sita", "Ayu"];
+  const [a, b, c] = foo;
+```
 
 ### Task 4
 
-    ```javascript
-      let bdays = ["10-17", "05-19", "20-19"];
-      bdays.reduce((acc, curr) => [...acc, curr.replace("-", "/")], []);
-    ```
+```javascript
+  let bdays = ["10-17", "05-19", "20-19"];
+  bdays.reduce((acc, curr) => [...acc, curr.replace("-", "/")], []);
+```
 
 ### Task 5
 
-    ```javascript
-      let value = [1, 2, 3, 4, 5, 6];
-      value.reduce((acc, curr) => [...acc, curr * 2], []);
-    ```
+```javascript
+  let value = [1, 2, 3, 4, 5, 6];
+  value.reduce((acc, curr) => [...acc, curr * 2], []);
+```
 
 ### Task 6
 
-    ```javascript
-      let arr = [1.5, 2.56, 5.1, 12.33];
-      arr.reduce((acc, curr) => [...acc, Math.round(curr)], []);
-    ```
+```javascript
+  let arr = [1.5, 2.56, 5.1, 12.33];
+  arr.reduce((acc, curr) => [...acc, Math.round(curr)], []);
+```
