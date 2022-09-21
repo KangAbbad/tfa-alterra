@@ -8,8 +8,10 @@
 
 ### Task 2.a
 
-    Jelaskan kenapa line 21, 22, 23 tidak dapat tampil?
-    > Karena variable 'terdaftar' value nya 'false'
+```notes
+Jelaskan kenapa line 21, 22, 23 tidak dapat tampil?
+> Karena variable 'terdaftar' value nya 'false'
+```
 
 ### Task 2.b
 
@@ -23,10 +25,10 @@
 
 ### Task 3
 
-```javascript
-  const foo = ["Budi", "Sita", "Ayu"];
-  const [a, b, c] = foo;
-```
+    ```javascript
+      const foo = ["Budi", "Sita", "Ayu"];
+      const [a, b, c] = foo;
+    ```
 
 ### Task 4
 
