@@ -4,7 +4,7 @@
 
 ### Task 1
 
-![task-1](https://github.com/KangAbbad/fe-day-03/blob/images/ss-01.png?raw=true)
+![task-1](https://github.com/KangAbbad/tfa-alterra/blob/master/fe-day-03/images/ss-01.png?raw=true)
 
 ### Task 2.a
 
