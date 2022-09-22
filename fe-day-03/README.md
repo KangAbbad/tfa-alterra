@@ -6,6 +6,8 @@
 
 ![task-1](https://github.com/KangAbbad/tfa-alterra/blob/master/fe-day-03/images/ss-01.png?raw=true)
 
+Link: [https://github.com/KangAbbad/tfa-alterra/tree/master/fe-day-03/main.js](https://github.com/KangAbbad/tfa-alterra/tree/master/fe-day-03/main.js)
+
 ### Task 2.a
 
 ```notes
