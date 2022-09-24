@@ -1,3 +1,5 @@
+'use strict'
+
 const myName: string = "Muhammad Naufal Abbad";
 const city: string = "Surakarta";
 
