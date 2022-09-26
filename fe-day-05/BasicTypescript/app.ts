@@ -25,10 +25,22 @@ class Perkenalan implements IPerkenalan {
     this.status = status;
   }
 
-  private getInfo(): void {
-    console.log(`ID: ${this.id}`);
-    console.log(`Nama: ${this.nama}`);
-    console.log(`Status: ${this.status}`);
+  private getId(): number {
+    return this.id;
+  }
+
+  private getNama(): string {
+    return this.nama;
+  }
+
+  private getStatus(): boolean {
+    return this.status;
+  }
+
+  getInfo(): void {
+    console.log(`ID: ${this.getId()}`);
+    console.log(`Nama: ${this.getNama()}`);
+    console.log(`Status: ${this.getStatus()}`);
   }
 
   getNumbers(numbers: number[]): void {
@@ -37,4 +49,5 @@ class Perkenalan implements IPerkenalan {
 }
 
 const mySelf = new Perkenalan(1, "kangabbad", true);
+mySelf.getInfo();
 mySelf.getNumbers([1, 7, 3, 8]);
