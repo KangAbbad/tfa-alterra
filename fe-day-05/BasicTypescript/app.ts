@@ -1,6 +1,6 @@
 'use strict'
 
-function startDecorator(): Function {
+function StartDecorator(): Function {
   return function () {
     console.log("Decorator sebelum class");
   };
@@ -12,7 +12,7 @@ interface IPerkenalan {
   status: boolean;
 }
 
-@startDecorator()
+@StartDecorator()
 class Perkenalan implements IPerkenalan {
   id: number;
   nama: string;
