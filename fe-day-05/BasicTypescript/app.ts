@@ -12,9 +12,8 @@ interface IPerkenalan {
   status: boolean;
 }
 
+@startDecorator()
 class Perkenalan implements IPerkenalan {
-  @startDecorator()
-
   id: number;
   nama: string;
   status: boolean;
