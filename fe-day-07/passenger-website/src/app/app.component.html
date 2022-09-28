@@ -16,12 +16,12 @@
   </div>
 </div>
 
-<div class="passanger-form mt-4">
+<div class="passenger-form mt-4">
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
         <form
-          [formGroup]="passangerForm"
+          [formGroup]="passengerForm"
           (ngSubmit)="onSubmit()"
           needs-validation
         >
@@ -35,8 +35,8 @@
                 id="id"
                 formControlName="id"
                 [ngClass]="{
-                  'is-invalid': isSubmitted && passangerForm.controls['id'].errors,
-                  'is-valid': isSubmitted && !passangerForm.controls['id'].errors
+                  'is-invalid': isSubmitted && passengerForm.controls['id'].errors,
+                  'is-valid': isSubmitted && !passengerForm.controls['id'].errors
                 }"
                 class="form-control form-control-sm"
               >
@@ -52,8 +52,8 @@
                 id="name"
                 formControlName="name"
                 [ngClass]="{
-                  'is-invalid': isSubmitted && passangerForm.controls['name'].errors,
-                  'is-valid': isSubmitted && !passangerForm.controls['name'].errors
+                  'is-invalid': isSubmitted && passengerForm.controls['name'].errors,
+                  'is-valid': isSubmitted && !passengerForm.controls['name'].errors
                 }"
                 class="form-control form-control-sm"
               >
@@ -69,8 +69,8 @@
                 id="city"
                 formControlName="city"
                 [ngClass]="{
-                  'is-invalid': isSubmitted && passangerForm.controls['city'].errors,
-                  'is-valid': isSubmitted && !passangerForm.controls['city'].errors
+                  'is-invalid': isSubmitted && passengerForm.controls['city'].errors,
+                  'is-valid': isSubmitted && !passengerForm.controls['city'].errors
                 }"
                 class="form-control form-control-sm"
               >
@@ -94,22 +94,22 @@
             </tr>
           </thead>
           <tbody class="table-group-divider">
-            <tr *ngFor="let passanger of passangers; let passangerIndex = index">
-              <th>{{ passanger.id }}</th>
-              <td>{{ passanger.name }}</td>
-              <td>{{ passanger.city }}</td>
+            <tr *ngFor="let passenger of passengers; let passengerIndex = index">
+              <th>{{ passenger.id }}</th>
+              <td>{{ passenger.name }}</td>
+              <td>{{ passenger.city }}</td>
               <td>
                 <button
                   type="button"
                   class="btn btn-link btn-sm p-0 me-3"
-                  (click)="onDelete(passangerIndex)"
+                  (click)="onDelete(passengerIndex)"
                 >
                   Delete
                 </button>
                 <button
                   type="button"
                   class="btn btn-link btn-sm p-0"
-                  (click)="onEdit(passanger, passangerIndex)"
+                  (click)="onEdit(passenger, passengerIndex)"
                 >
                   Edit
                 </button>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-interface IPassangerForm {
+interface IpassengerForm {
   id: number;
   name: string;
   city: string;
@@ -14,15 +14,15 @@ interface IPassangerForm {
 })
 export class AppComponent {
   title: string = 'Passenger Website';
-  passangerForm!: FormGroup;
+  passengerForm!: FormGroup;
   isSubmitted: boolean = false;
-  passangers: IPassangerForm[] = [];
-  selectedPassangerIndex: number | null = null;
+  passengers: IpassengerForm[] = [];
+  selectedpassengerIndex: number | null = null;
 
   constructor(private formBuilder: FormBuilder) {}
 
   ngOnInit(): void {
-    this.passangerForm = this.formBuilder.group({
+    this.passengerForm = this.formBuilder.group({
       id: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       name: ['', Validators.required],
       city: ['', Validators.required],
@@ -32,25 +32,25 @@ export class AppComponent {
   onSubmit(): void {
     this.isSubmitted = true;
 
-    if (!this.passangerForm.invalid) {
-      if (this.selectedPassangerIndex !== null) {
-        this.passangers.splice(this.selectedPassangerIndex, 1, this.passangerForm.value);
+    if (!this.passengerForm.invalid) {
+      if (this.selectedpassengerIndex !== null) {
+        this.passengers.splice(this.selectedpassengerIndex, 1, this.passengerForm.value);
       } else {
-        this.passangers.push(this.passangerForm.value);
+        this.passengers.push(this.passengerForm.value);
       }
     }
 
-    this.selectedPassangerIndex = null;
+    this.selectedpassengerIndex = null;
     this.isSubmitted = false;
-    this.passangerForm.reset();
+    this.passengerForm.reset();
   }
 
-  onDelete(passangerIndex: number): void {
-    this.passangers.splice(passangerIndex, 1);
+  onDelete(passengerIndex: number): void {
+    this.passengers.splice(passengerIndex, 1);
   }
 
-  onEdit(passanger: IPassangerForm, passangerIndex: number): void {
-    this.selectedPassangerIndex = passangerIndex;
-    this.passangerForm.setValue(passanger);
+  onEdit(passenger: IpassengerForm, passengerIndex: number): void {
+    this.selectedpassengerIndex = passengerIndex;
+    this.passengerForm.setValue(passenger);
   }
 }
