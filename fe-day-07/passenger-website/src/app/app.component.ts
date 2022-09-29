@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
-interface IpassengerForm {
-  id: number;
-  name: string;
-  city: string;
-}
+import { IPassenger } from './dto/IPassenger';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +11,7 @@ export class AppComponent {
   title: string = 'Passenger Website';
   passengerForm!: FormGroup;
   isSubmitted: boolean = false;
-  passengers: IpassengerForm[] = [];
+  passengers: IPassenger[] = [];
   selectedpassengerIndex: number | null = null;
 
   constructor(private formBuilder: FormBuilder) {}
@@ -38,18 +33,18 @@ export class AppComponent {
       } else {
         this.passengers.push(this.passengerForm.value);
       }
-    }
 
-    this.selectedpassengerIndex = null;
-    this.isSubmitted = false;
-    this.passengerForm.reset();
+      this.selectedpassengerIndex = null;
+      this.isSubmitted = false;
+      this.passengerForm.reset();
+    }
   }
 
-  onDelete(passengerIndex: number): void {
+  onDelete({ passengerIndex }: { passengerIndex: number }): void {
     this.passengers.splice(passengerIndex, 1);
   }
 
-  onEdit(passenger: IpassengerForm, passengerIndex: number): void {
+  onEdit({ passenger, passengerIndex }: { passenger: IPassenger, passengerIndex: number }): void {
     this.selectedpassengerIndex = passengerIndex;
     this.passengerForm.setValue(passenger);
   }

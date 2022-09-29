@@ -20,103 +20,18 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-4">
-        <form
+        <app-passenger-form
           [formGroup]="passengerForm"
-          (ngSubmit)="onSubmit()"
-          needs-validation
-        >
-          <div class="row">
-            <label for="id" class="col-2 col-lg-3 col-form-label">
-              Id
-            </label>
-            <div class="col-10 col-lg-9">
-              <input
-                type="text"
-                id="id"
-                formControlName="id"
-                [ngClass]="{
-                  'is-invalid': isSubmitted && passengerForm.controls['id'].errors,
-                  'is-valid': isSubmitted && !passengerForm.controls['id'].errors
-                }"
-                class="form-control form-control-sm"
-              >
-            </div>
-          </div>
-          <div class="row mt-2">
-            <label for="name" class="col-2 col-lg-3 col-form-label">
-              Nama
-            </label>
-            <div class="col-10 col-lg-9">
-              <input
-                type="text"
-                id="name"
-                formControlName="name"
-                [ngClass]="{
-                  'is-invalid': isSubmitted && passengerForm.controls['name'].errors,
-                  'is-valid': isSubmitted && !passengerForm.controls['name'].errors
-                }"
-                class="form-control form-control-sm"
-              >
-            </div>
-          </div>
-          <div class="row mt-2">
-            <label for="city" class="col-2 col-lg-3 col-form-label">
-              Kota
-            </label>
-            <div class="col-10 col-lg-9">
-              <input
-                type="text"
-                id="city"
-                formControlName="city"
-                [ngClass]="{
-                  'is-invalid': isSubmitted && passengerForm.controls['city'].errors,
-                  'is-valid': isSubmitted && !passengerForm.controls['city'].errors
-                }"
-                class="form-control form-control-sm"
-              >
-            </div>
-          </div>
-          <div class="text-end mt-3">
-            <button type="submit" class="btn btn-primary btn-sm">
-              Submit
-            </button>
-          </div>
-        </form>
+          [isSubmitted]="isSubmitted"
+          (onSubmit)="onSubmit()"
+        ></app-passenger-form>
       </div>
       <div class="col-lg-8 mt-3 mt-lg-0">
-        <table class="table">
-          <thead>
-            <tr>
-              <th width="5%">ID</th>
-              <th width="45%">Nama</th>
-              <th width="30%">Kota</th>
-              <th width="15%">Action</th>
-            </tr>
-          </thead>
-          <tbody class="table-group-divider">
-            <tr *ngFor="let passenger of passengers; let passengerIndex = index">
-              <th>{{ passenger.id }}</th>
-              <td>{{ passenger.name }}</td>
-              <td>{{ passenger.city }}</td>
-              <td>
-                <button
-                  type="button"
-                  class="btn btn-link btn-sm p-0 me-3"
-                  (click)="onDelete(passengerIndex)"
-                >
-                  Delete
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-link btn-sm p-0"
-                  (click)="onEdit(passenger, passengerIndex)"
-                >
-                  Edit
-                </button>
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        <app-passenger-list
+          [passengers]="passengers"
+          (onEdit)="onEdit($event)"
+          (onDelete)="onDelete($event)"
+        ></app-passenger-list>
       </div>
     </div>
   </div>
