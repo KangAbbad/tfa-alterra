@@ -12,7 +12,7 @@ export class AppComponent {
   passengerForm!: FormGroup;
   isSubmitted: boolean = false;
   passengers: IPassenger[] = [];
-  selectedpassengerIndex: number | null = null;
+  selectedPassengerIndex: number | null = null;
 
   constructor(private formBuilder: FormBuilder) {}
 
@@ -28,13 +28,13 @@ export class AppComponent {
     this.isSubmitted = true;
 
     if (!this.passengerForm.invalid) {
-      if (this.selectedpassengerIndex !== null) {
-        this.passengers.splice(this.selectedpassengerIndex, 1, this.passengerForm.value);
+      if (this.selectedPassengerIndex !== null) {
+        this.passengers.splice(this.selectedPassengerIndex, 1, this.passengerForm.value);
       } else {
         this.passengers.push(this.passengerForm.value);
       }
 
-      this.selectedpassengerIndex = null;
+      this.selectedPassengerIndex = null;
       this.isSubmitted = false;
       this.passengerForm.reset();
     }
@@ -45,7 +45,7 @@ export class AppComponent {
   }
 
   onEdit({ passenger, passengerIndex }: { passenger: IPassenger, passengerIndex: number }): void {
-    this.selectedpassengerIndex = passengerIndex;
+    this.selectedPassengerIndex = passengerIndex;
     this.passengerForm.setValue(passenger);
   }
 }
