@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { IPassenger } from '../dto/IPassenger';
+import { IPassenger } from '../../../dto/IPassenger';
 
 @Component({
   selector: 'app-passenger-list',
