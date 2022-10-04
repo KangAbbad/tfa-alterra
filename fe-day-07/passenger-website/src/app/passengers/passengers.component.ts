@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { IPassenger } from '../dto/IPassenger';
+import { IPassenger } from '../models/IPassenger';
 
 @Component({
   selector: 'app-passengers',
