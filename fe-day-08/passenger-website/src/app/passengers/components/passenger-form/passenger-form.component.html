@@ -1,0 +1,62 @@
+<form
+  [formGroup]="passengerForm"
+  (ngSubmit)="onSubmitPessanger()"
+  needs-validation
+>
+  <div class="row">
+    <label for="id" class="col-2 col-lg-3 col-form-label">
+      Id
+    </label>
+    <div class="col-10 col-lg-9">
+      <input
+        type="text"
+        id="id"
+        formControlName="id"
+        [ngClass]="{
+          'is-invalid': isSubmitted && passengerForm.controls['id'].errors,
+          'is-valid': isSubmitted && !passengerForm.controls['id'].errors
+        }"
+        class="form-control form-control-sm"
+      >
+    </div>
+  </div>
+  <div class="row mt-2">
+    <label for="name" class="col-2 col-lg-3 col-form-label">
+      Nama
+    </label>
+    <div class="col-10 col-lg-9">
+      <input
+        type="text"
+        id="name"
+        formControlName="name"
+        [ngClass]="{
+          'is-invalid': isSubmitted && passengerForm.controls['name'].errors,
+          'is-valid': isSubmitted && !passengerForm.controls['name'].errors
+        }"
+        class="form-control form-control-sm"
+      >
+    </div>
+  </div>
+  <div class="row mt-2">
+    <label for="city" class="col-2 col-lg-3 col-form-label">
+      Kota
+    </label>
+    <div class="col-10 col-lg-9">
+      <input
+        type="text"
+        id="city"
+        formControlName="city"
+        [ngClass]="{
+          'is-invalid': isSubmitted && passengerForm.controls['city'].errors,
+          'is-valid': isSubmitted && !passengerForm.controls['city'].errors
+        }"
+        class="form-control form-control-sm"
+      >
+    </div>
+  </div>
+  <div class="text-end mt-3">
+    <button type="submit" class="btn btn-primary btn-sm">
+      Submit
+    </button>
+  </div>
+</form>
