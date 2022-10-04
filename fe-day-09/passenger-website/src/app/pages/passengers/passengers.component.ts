@@ -1,21 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
-import { IPassenger } from '../dto/IPassenger';
+import { IPassenger } from 'src/app/models/IPassenger';
+import { PassengerService } from 'src/app/services/passenger.service';
 
 @Component({
   selector: 'app-passengers',
   templateUrl: './passengers.component.html',
-  styleUrls: ['./passengers.component.css']
+  styleUrls: ['./passengers.component.css'],
 })
 export class PassengersComponent implements OnInit {
   title: string = 'Passenger Website';
   passengerForm!: FormGroup;
-  isSubmitted: boolean = false;
-  passengers: IPassenger[] = [];
   selectedPassengerIndex: number | null = null;
+  isSubmitted: boolean = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private passengerService: PassengerService) {}
 
   ngOnInit(): void {
     this.passengerForm = this.formBuilder.group({
@@ -25,28 +25,34 @@ export class PassengersComponent implements OnInit {
     });
   }
 
+  private onEdit(): void {
+    if (this.selectedPassengerIndex !== null) {
+      this.passengerService.onEdit(this.passengerForm.value, this.selectedPassengerIndex);
+    }
+  }
+
+  private onAdd(): void {
+    this.passengerService.onAdd(this.passengerForm.value);
+  }
+
+  onEditPreview({ passenger, passengerIndex }: { passenger: IPassenger, passengerIndex: number }): void {
+    this.selectedPassengerIndex = passengerIndex;
+    this.passengerForm.setValue(passenger);
+  }
+
   onSubmit(): void {
     this.isSubmitted = true;
 
     if (!this.passengerForm.invalid) {
       if (this.selectedPassengerIndex !== null) {
-        this.passengers.splice(this.selectedPassengerIndex, 1, this.passengerForm.value);
+        this.onEdit();
       } else {
-        this.passengers.push(this.passengerForm.value);
+        this.onAdd();
       }
 
       this.selectedPassengerIndex = null;
       this.isSubmitted = false;
       this.passengerForm.reset();
     }
-  }
-
-  onDelete({ passengerIndex }: { passengerIndex: number }): void {
-    this.passengers.splice(passengerIndex, 1);
-  }
-
-  onEdit({ passenger, passengerIndex }: { passenger: IPassenger, passengerIndex: number }): void {
-    this.selectedPassengerIndex = passengerIndex;
-    this.passengerForm.setValue(passenger);
   }
 }

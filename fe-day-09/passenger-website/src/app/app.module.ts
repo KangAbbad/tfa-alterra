@@ -5,23 +5,36 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router'
 
 import { AppComponent } from './app.component';
-import { PassengerListComponent } from './passengers/components/passenger-list/passenger-list.component';
-import { PassengerFormComponent } from './passengers/components/passenger-form/passenger-form.component';
-import { PassengersComponent } from './passengers/passengers.component';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageComponent } from './pages/homepage/homepage.component';
+import { PassengerService } from './services/passenger.service';
+import { PassengerFormComponent } from './pages/passengers/components/passenger-form/passenger-form.component';
+import { PassengerListComponent } from './pages/passengers/components/passenger-list/passenger-list.component';
+import { PassengersComponent } from './pages/passengers/passengers.component';
+import { PassengerDetailComponent } from './pages/passenger-detail/passenger-detail.component';
+import { ArticlesComponent } from './pages/articles/articles.component';
+import { AboutComponent } from './pages/about/about.component';
+import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: '', component: HomepageComponent },
   { path: 'passengers', component: PassengersComponent },
+  { path: 'passengers/:id', component: PassengerDetailComponent },
+  { path: 'articles', component: ArticlesComponent },
+  { path: 'about', component: AboutComponent },
+  { path: 'contact-us', component: ContactUsComponent },
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    PassengerListComponent,
-    PassengerFormComponent,
     PassengersComponent,
+    PassengerFormComponent,
+    PassengerListComponent,
     HomepageComponent,
+    PassengerDetailComponent,
+    ArticlesComponent,
+    AboutComponent,
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,7 +42,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes),
   ],
-  providers: [],
+  providers: [PassengerService],
   bootstrap: [AppComponent]
 })
 

@@ -9,11 +9,7 @@
         ></app-passenger-form>
       </div>
       <div class="col-lg-8 mt-3 mt-lg-0">
-        <app-passenger-list
-          [passengers]="passengers"
-          (onEdit)="onEdit($event)"
-          (onDelete)="onDelete($event)"
-        ></app-passenger-list>
+        <app-passenger-list (onEditPreview)="onEditPreview($event)"></app-passenger-list>
       </div>
     </div>
   </div>
