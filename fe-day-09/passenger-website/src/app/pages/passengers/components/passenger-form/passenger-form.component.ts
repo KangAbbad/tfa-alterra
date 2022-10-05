@@ -18,7 +18,7 @@ export class PassengerFormComponent implements OnInit {
     this.passengerForm = this.parentFormGroup.control;
   }
 
-  onSubmitPessanger(): void {
+  onSubmitPassenger(): void {
     this.onSubmit.emit();
   }
 }

@@ -1,0 +1,38 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th width="40%">Title</th>
+      <th width="40%">Description</th>
+      <th width="20%">Action</th>
+    </tr>
+  </thead>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let article of getArticles(); let articleIndex = index">
+      <td>{{ article.title }}</td>
+      <td>{{ article.description }}</td>
+      <td>
+        <button
+          type="button"
+          class="btn btn-link btn-sm p-0"
+        >
+          Publish
+        </button>
+        <button
+          type="button"
+          class="btn btn-link btn-sm p-0 mx-3"
+          (click)="onEdit(article)"
+        >
+          Edit
+        </button>
+        <button
+          type="button"
+          class="btn btn-link btn-sm p-0"
+          (click)="onDelete(article.id)"
+        >
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
