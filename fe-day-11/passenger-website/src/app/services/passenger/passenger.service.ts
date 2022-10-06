@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { IPassenger } from '../models/IPassenger';
+import { IPassenger } from '../../models/IPassenger';
 
 @Injectable()
 export class PassengerService {

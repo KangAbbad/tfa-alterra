@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 import { IPassenger } from 'src/app/models/IPassenger';
-import { PassengerService } from 'src/app/services/passenger.service';
+import { PassengerService } from 'src/app/services/passenger/passenger.service';
 
 @Component({
   selector: 'app-passenger-list',

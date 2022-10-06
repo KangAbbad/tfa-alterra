@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { AppLayoutComponent } from './layout/app-layout.component';
-import { AuthLayoutComponent } from './layout/auth-layout.component';
+import { DashboardLayoutComponent } from './layout/dashboard-layout/dashboard-layout.component';
+import { AuthLayoutComponent } from './layout/auth-layout/auth-layout.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { AuthGuard } from './core/guard/auth.guard';
 
 @NgModule({
   imports: [
@@ -21,7 +22,9 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
         },
         {
           path: 'dashboard',
-          component: AppLayoutComponent,
+          canLoad: [AuthGuard],
+          canActivate: [AuthGuard],
+          component: DashboardLayoutComponent,
           children: [
             { path: '', loadChildren: () => import('./pages/homepage/homepage.module').then(m => m.HomepageModule) },
             { path: 'passengers', loadChildren: () => import('./pages/passengers/passengers.module').then(m => m.PassengersModule) },

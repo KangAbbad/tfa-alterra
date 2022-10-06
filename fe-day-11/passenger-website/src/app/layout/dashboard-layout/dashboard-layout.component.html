@@ -13,13 +13,15 @@
         <li><a routerLink="/dashboard/contact-us" class="nav-link px-2 text-white">Contact Us</a></li>
       </ul>
 
-      <form class="col-auto me-3" role="search">
-        <input type="search" class="form-control form-control-dark" placeholder="Search..." aria-label="Search">
-      </form>
+      <div class="col-auto me-3">
+        <p class="mb-0">
+          {{ getUserInfo().email }}
+        </p>
+      </div>
 
       <div class="text-end">
-        <button type="button" class="btn btn-outline-light me-2">
-          Search
+        <button type="button" class="btn btn-outline-light btn-sm me-2" (click)="onLogout()">
+          Logout
         </button>
       </div>
     </div>

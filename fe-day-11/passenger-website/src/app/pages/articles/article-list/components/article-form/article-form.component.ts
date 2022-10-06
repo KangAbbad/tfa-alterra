@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
 import { IArticle } from 'src/app/models/IArticle';
-import { ArticleService } from 'src/app/services/article.service';
+import { ArticleService } from 'src/app/services/article/article.service';
 
 @Component({
   selector: 'app-article-form',

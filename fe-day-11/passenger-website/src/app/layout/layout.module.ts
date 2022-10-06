@@ -2,12 +2,12 @@ import { NgModule } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouterModule } from "@angular/router";
 
-import { AppLayoutComponent } from "./app-layout.component";
-import { AuthLayoutComponent } from "./auth-layout.component";
+import { DashboardLayoutComponent } from "./dashboard-layout/dashboard-layout.component";
+import { AuthLayoutComponent } from "./auth-layout/auth-layout.component";
 
 @NgModule({
   declarations: [
-      AppLayoutComponent,
+      DashboardLayoutComponent,
       AuthLayoutComponent,
   ],
   imports: [
@@ -15,7 +15,7 @@ import { AuthLayoutComponent } from "./auth-layout.component";
       RouterModule,
   ],
   exports: [
-    AppLayoutComponent,
+    DashboardLayoutComponent,
     AuthLayoutComponent,
   ]
 })

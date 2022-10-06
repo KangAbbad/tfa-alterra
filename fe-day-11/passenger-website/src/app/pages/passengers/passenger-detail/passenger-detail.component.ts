@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { IPassenger } from 'src/app/models/IPassenger';
-import { PassengerService } from 'src/app/services/passenger.service';
+import { PassengerService } from 'src/app/services/passenger/passenger.service';
 
 @Component({
   selector: 'app-passenger-detail',
