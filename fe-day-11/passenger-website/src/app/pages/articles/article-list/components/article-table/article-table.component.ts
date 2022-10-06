@@ -5,11 +5,10 @@ import { IArticle } from 'src/app/models/IArticle';
 import { ArticleService } from 'src/app/services/article.service';
 
 @Component({
-  selector: 'app-article-list',
-  templateUrl: './article-list.component.html',
-  styleUrls: ['./article-list.component.css']
+  selector: 'app-article-table',
+  templateUrl: './article-table.component.html',
 })
-export class ArticleListComponent implements OnInit {
+export class ArticleTableComponent implements OnInit {
   destroy$: Subscription = new Subscription();
 
   constructor(private articleService: ArticleService) { }

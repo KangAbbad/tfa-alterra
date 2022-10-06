@@ -8,7 +8,6 @@ import { ArticleService } from 'src/app/services/article.service';
 @Component({
   selector: 'app-article-form',
   templateUrl: './article-form.component.html',
-  styleUrls: ['./article-form.component.css']
 })
 export class ArticleFormComponent implements OnInit {
   isSubmitted: boolean = false;
