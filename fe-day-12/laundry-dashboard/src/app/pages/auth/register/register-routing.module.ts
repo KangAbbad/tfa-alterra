@@ -5,7 +5,9 @@ import { RegisterComponent } from './register.component';
 
 @NgModule({
   imports: [
-    RouterModule.forChild([{ path: '', component: RegisterComponent }]),
+    RouterModule.forChild([
+      { path: '', title: 'Sign Up', component: RegisterComponent },
+    ]),
   ],
   exports: [RouterModule],
 })

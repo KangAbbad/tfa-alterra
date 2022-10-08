@@ -34,6 +34,20 @@ import { ErrorPageComponent } from './pages/error-page/error-page.component';
                   m => m.HomepageModule
                 ),
             },
+            {
+              path: 'transactions',
+              loadChildren: () =>
+                import('./pages/transactions/transactions.module').then(
+                  m => m.TransactionsModule
+                ),
+            },
+            {
+              path: 'admins',
+              loadChildren: () =>
+                import('./pages/admins/admins.module').then(
+                  m => m.AdminsModule
+                ),
+            },
           ],
         },
         { path: 'error-page', component: ErrorPageComponent },

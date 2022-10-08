@@ -15,5 +15,6 @@
     "editor.formatOnSave": false
   },
   "editor.suggest.snippetsPreventQuickSuggestions": false,
-  "editor.inlineSuggest.enabled": true
+  "editor.inlineSuggest.enabled": true,
+  "scss.lint.unknownAtRules": "ignore"
 }

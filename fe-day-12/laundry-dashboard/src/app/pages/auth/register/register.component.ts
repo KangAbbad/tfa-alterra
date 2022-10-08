@@ -15,7 +15,7 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService,
+    // private authService: AuthService,
     private router: Router
   ) {}
 
@@ -38,7 +38,7 @@ export class RegisterComponent implements OnInit {
 
     if (this.registerForm.invalid) return;
 
-    this.isLoading = true;
+    // this.isLoading = true;
 
     // this.authService
     //   .httpCreateRegister(this.registerForm.value)
@@ -54,5 +54,7 @@ export class RegisterComponent implements OnInit {
     //     this.isSubmitted = false;
     //     this.isLoading = false;
     //   });
+
+    this.router.navigateByUrl('/auth/login');
   }
 }

@@ -19,16 +19,16 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private authService: AuthService,
-    private sessionService: SessionService,
+    // private authService: AuthService,
+    // private sessionService: SessionService,
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required],
+      email: ['email@email.com', Validators.required],
+      password: ['password', Validators.required],
     });
 
     this.activatedRoute.queryParams.subscribe(params => {
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
 
     if (this.loginForm.invalid) return;
 
-    this.isLoading = true;
+    // this.isLoading = true;
 
     // this.authService
     //   .httpCreateLogin(this.loginForm.value)
@@ -72,5 +72,7 @@ export class LoginComponent implements OnInit {
 
     //     this.router.navigateByUrl('/dashboard');
     //   });
+
+    this.router.navigateByUrl('/dashboard');
   }
 }

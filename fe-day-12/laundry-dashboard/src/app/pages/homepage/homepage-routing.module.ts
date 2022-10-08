@@ -5,7 +5,9 @@ import { HomepageComponent } from './homepage.component';
 
 @NgModule({
   imports: [
-    RouterModule.forChild([{ path: '', component: HomepageComponent }]),
+    RouterModule.forChild([
+      { path: '', title: 'Sales Dashboard', component: HomepageComponent },
+    ]),
   ],
   exports: [RouterModule],
 })
