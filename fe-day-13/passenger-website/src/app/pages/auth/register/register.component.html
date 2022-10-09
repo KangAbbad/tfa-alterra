@@ -1,0 +1,64 @@
+<div class="d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+  <div style="min-width: 300px;">
+    <form
+      [formGroup]="registerForm"
+      (ngSubmit)="onSubmit()"
+      needs-validation
+    >
+      <h3 class="mb-5">
+        Register
+      </h3>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email</label>
+        <input
+          formControlName="email"
+          id="email"
+          type="email"
+          [ngClass]="{
+            'is-invalid': isSubmitted && registerForm.controls['email'].errors,
+            'is-valid': isSubmitted && !registerForm.controls['email'].errors
+          }"
+          class="form-control form-control-sm"
+        >
+      </div>
+      <div class="mb-3">
+        <label for="fullname" class="form-label">Fullname</label>
+        <input
+          formControlName="fullname"
+          id="fullname"
+          type="fullname"
+          [ngClass]="{
+            'is-invalid': isSubmitted && registerForm.controls['fullname'].errors,
+            'is-valid': isSubmitted && !registerForm.controls['fullname'].errors
+          }"
+          class="form-control form-control-sm"
+        >
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input
+          formControlName="password"
+          id="password"
+          type="password"
+          [ngClass]="{
+            'is-invalid': isSubmitted && registerForm.controls['password'].errors,
+            'is-valid': isSubmitted && !registerForm.controls['password'].errors
+          }"
+          class="form-control form-control-sm"
+        >
+      </div>
+      <button
+        type="submit"
+        [disabled]="isLoading"
+        class="btn btn-primary w-100"
+      >
+        <span *ngIf="isLoading" class="spinner-border spinner-border-sm"></span>
+        <span *ngIf="!isLoading">Submit</span>
+      </button>
+    </form>
+    <div class="text-center mt-4">
+      <span>Have Account ? </span>
+      <a routerLink="/auth/login">Log In</a>
+    </div>
+  </div>
+</div>

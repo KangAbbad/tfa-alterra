@@ -1,0 +1,16 @@
+<div class="mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <app-passenger-form
+          [formGroup]="passengerForm"
+          [isSubmitted]="isSubmitted"
+          (onSubmit)="onSubmit()"
+        ></app-passenger-form>
+      </div>
+      <div class="col-lg-8 mt-3 mt-lg-0">
+        <app-passenger-table (onEditPreview)="onEditPreview($event)"></app-passenger-table>
+      </div>
+    </div>
+  </div>
+</div>

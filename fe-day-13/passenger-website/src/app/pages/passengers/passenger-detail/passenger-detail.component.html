@@ -1,0 +1,17 @@
+<div *ngIf="getData()" class="text-center p-5">
+  <h5>ID: {{ getData().id }}</h5>
+  <h5>Nama: {{ getData().name }}</h5>
+  <h5>Kota: {{ getData().city }}</h5>
+</div>
+<div *ngIf="!getData()" class="text-center p-5">
+  <h5>Data with id: {{ paramsId }} NOT FOUND.</h5>
+</div>
+<div class="text-center">
+  <button
+    type="button"
+    class="btn btn-primary btn-sm"
+    [routerLink]="['/dashboard/passengers']"
+  >
+    Kembali ke halaman passenger
+  </button>
+</div>
