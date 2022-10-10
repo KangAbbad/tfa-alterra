@@ -16,7 +16,7 @@ export class DashboardLayoutComponent implements OnInit {
   }
 
   getUserInfo(): IUserInfo {
-    return this.sessionService.getSession();
+    return this.sessionService.getSession() ?? { email: '' };
   }
 
   onLogout(): void {

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormGroup, Validators, FormControl, FormBuilder } from '@angular/forms';
 
 import { IPassenger } from 'src/app/models/IPassenger';
 import { PassengerService } from 'src/app/services/passenger/passenger.service';
@@ -10,7 +10,11 @@ import { PassengerService } from 'src/app/services/passenger/passenger.service';
 })
 export class PassengerListComponent implements OnInit {
   title: string = 'Passenger Website';
-  passengerForm: FormGroup = new FormGroup({});
+  passengerForm: FormGroup = new FormGroup({
+    id: new FormControl('', [Validators.required, Validators.pattern('^[0-9]*$')]),
+    name: new FormControl('', Validators.required),
+    city: new FormControl('', Validators.required),
+  });
   selectedPassengerIndex: number | null = null;
   isSubmitted: boolean = false;
 

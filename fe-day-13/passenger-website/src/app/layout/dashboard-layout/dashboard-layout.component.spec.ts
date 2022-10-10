@@ -1,5 +1,7 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import { SessionService } from 'src/app/services/session/session.service';
 import { DashboardLayoutComponent } from './dashboard-layout.component';
 
 describe('DashboardLayoutComponent', () => {
@@ -8,7 +10,9 @@ describe('DashboardLayoutComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DashboardLayoutComponent ]
+      declarations: [ DashboardLayoutComponent ],
+      imports: [RouterTestingModule],
+      providers: [SessionService]
     })
     .compileComponents();
 
