@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { HomepageComponent } from './homepage.component';
 
@@ -8,7 +9,8 @@ describe('HomepageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomepageComponent ]
+      declarations: [ HomepageComponent ],
+      imports: [NgbModule],
     })
     .compileComponents();
 
