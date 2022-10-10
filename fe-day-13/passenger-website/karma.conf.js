@@ -27,6 +27,7 @@ module.exports = function (config) {
     coverageReporter: {
       dir: require('path').join(__dirname, './coverage/passenger-website'),
       subdir: '.',
+      includeAllSources: true,
       reporters: [
         { type: 'html' },
         { type: 'text-summary' }
