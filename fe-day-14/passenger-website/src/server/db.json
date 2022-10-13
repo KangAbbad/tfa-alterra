@@ -1,0 +1,19 @@
+{
+  "articles": [
+    {
+      "id": 1,
+      "title": "Judul 01",
+      "description": "Deskripsi 01"
+    },
+    {
+      "id": 2,
+      "title": "Judul 02",
+      "description": "Deskripsi 02"
+    },
+    {
+      "title": "Judul 03",
+      "description": "Deskripsi 03",
+      "id": 3
+    }
+  ]
+}
